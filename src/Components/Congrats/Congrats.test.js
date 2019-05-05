@@ -1,7 +1,5 @@
 import React from 'react';
-import Enyzme, {shallow} from 'enzyme';
-import EnyzmeAdapter from 'enzyme-adapter-react-16';
-import checkPropTypes from 'check-prop-types';
+import {shallow} from 'enzyme';
 
 
 import {findByTestAttr, checkProps} from '../../../test/testUtils';
@@ -14,7 +12,7 @@ const setup = (props={}) => {
   return shallow(<Congrats {...setupProps} />);
 }
 
-Enyzme.configure({adapter: new EnyzmeAdapter()});
+
 
 test('renders without error', () => {
   const wrapper = setup({success: false});
