@@ -3,11 +3,12 @@ import {shallow} from 'enzyme';
 
 import {findByTestAttr, storeFactory} from '../../../test/testUtils';
 import Input from './Input';
-import { exportAllDeclaration } from '@babel/types';
 
-const setup = (initialState={}) => {
+const setup = (initialState = {}) => {
   const store = storeFactory(initialState);
-  const wrapper = shallow(<Input store={store}/>).dive().dive();
+  const wrapper = shallow(<Input store={store}/>)
+    .dive()
+    .dive();
   return wrapper;
 }
 
@@ -15,35 +16,29 @@ describe('render', () => {
   describe('word has not been guessed', () => {
     let wrapper;
     beforeEach(() => {
-      const initialState = {success: false};
+      const initialState = {
+        success: false
+      };
       wrapper = setup(initialState);
     })
     test('renders component without error', () => {
       const component = findByTestAttr(wrapper, 'component-input');
-      exportAllDeclaration(component.length).toBe(1);
+      expect(component.length).toBe(1);
     });
     test('renders input box', () => {
       const inputBox = findByTestAttr(wrapper, 'input-box');
-      exportAllDeclaration(inputBox.length).toBe(1);
+      expect(inputBox.length).toBe(1);
     });
     test('renders submit button', () => {
       const submitButton = findByTestAttr(wrapper, 'submit-button');
-      exportAllDeclaration(submitButton.length).toBe(1);
+      expect(submitButton.length).toBe(1);
     });
   });
   describe('word has been guessed', () => {
-    test('renders component without error', () => {
-
-    });
-    test('renders not input box', () => {
-
-    });
-    test('renders not submit button', () => {
-
-    });
+    test('renders component without error', () => {});
+    test('renders not input box', () => {});
+    test('renders not submit button', () => {});
   });
 });
 
-describe('update state', () => {
-  
-});
+describe('update state', () => {});
