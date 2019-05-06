@@ -12,8 +12,6 @@ const setup = (props={}) => {
   return shallow(<Congrats {...setupProps} />);
 }
 
-
-
 test('renders without error', () => {
   const wrapper = setup({success: false});
   const component = findByTestAttr(wrapper, 'component-congrats');
