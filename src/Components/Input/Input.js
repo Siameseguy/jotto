@@ -18,8 +18,7 @@ class Input extends Component {
           <button
             data-test="submit-button"
             type="submit"
-            className="btn btn-primary mb-2"
-            type="submit">
+            className="btn btn-primary mb-2">
             Submit
           </button>
         </form>
