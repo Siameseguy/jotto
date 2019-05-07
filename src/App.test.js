@@ -38,7 +38,6 @@ describe('redux properties', () => {
 
 test('getSecretWord runs on App mount', () => {
   const getSecretWordMock = jest.fn();
-
   const props = {
     getSecretWord: getSecretWordMock,
     success: false,
